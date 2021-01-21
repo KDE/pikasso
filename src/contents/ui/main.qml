@@ -60,6 +60,14 @@ Kirigami.ApplicationWindow {
                 onAccepted: drawingarea.penColor = color
             }
 
+            FileDialog {
+                id: fileDialog
+                fileMode: FileDialog.SaveFile
+                onAccepted: {
+                    drawingarea.saveSvg(fileDialog.file)
+                }
+            }
+
             actions {
                 contextualActions: [
                     Kirigami.Action {
@@ -74,6 +82,11 @@ Kirigami.ApplicationWindow {
                             to: 100
                             onValueChanged: drawingarea.penWidth = value
                         }
+                    },
+                    Kirigami.Action {
+                        text: i18n("Save as")
+                        icon.name: "document-save-as"
+                        onTriggered: fileDialog.open()
                     }
                 ]
             }
