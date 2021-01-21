@@ -66,9 +66,12 @@ class DrawingArea : public QQuickItem
 
     Q_PROPERTY(QColor penColor READ penColor WRITE setPenColor NOTIFY penColorChanged)
     Q_PROPERTY(float penWidth READ penWidth WRITE setPenWidth NOTIFY penWidthChanged)
+
 public:
     explicit DrawingArea(QQuickItem *parent = nullptr);
     ~DrawingArea();
+
+    Q_INVOKABLE void saveSvg(const QUrl &file);
 
     QColor penColor() const;
     void setPenColor(const QColor &color);

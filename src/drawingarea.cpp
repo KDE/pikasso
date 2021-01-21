@@ -8,6 +8,9 @@
 #include <QPointF>
 #include <QSGFlatColorMaterial>
 
+#include <QSvgGenerator>
+#include <QPainter>
+
 DrawingArea::DrawingArea(QQuickItem *parent)
     : QQuickItem(parent)
 {
@@ -18,6 +21,26 @@ DrawingArea::DrawingArea(QQuickItem *parent)
 
 DrawingArea::~DrawingArea()
 {}
+
+void DrawingArea::saveSvg(const QUrl &file)
+{
+    if (!file.isEmpty()) {
+        QSvgGenerator generator;
+        generator.setFileName(file.toLocalFile());
+
+        QPainter painter;
+        painter.begin(&generator);
+
+        for (const auto &drawEvent : qAsConst(m_drawEventList)) {
+            painter.setPen(drawEvent.penColor);
+            QPen pen = painter.pen();
+            pen.setWidth(drawEvent.penWidth);
+            painter.setPen(pen);
+            painter.drawPath(drawEvent.path);
+        }
+        painter.end();
+    }
+}
 
 QColor DrawingArea::penColor() const
 {
