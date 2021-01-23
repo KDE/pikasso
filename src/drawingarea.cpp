@@ -126,6 +126,23 @@ void DrawingArea::mouseReleaseEvent(QMouseEvent* e)
     }
 }
 
+bool DrawingArea::canUndo() const
+{
+    return !m_drawEventList.isEmpty();
+}
+
+void DrawingArea::undo()
+{
+    m_drawing = false;
+    if (!m_drawEventList.isEmpty()) {
+        m_drawEventList.removeLast();
+        if (m_drawEventList.isEmpty()) {
+            Q_EMIT canUndoChanged();
+        }
+    }
+    update();
+}
+
 
 void DrawingArea::ensureNewDrawEvent()
 {
@@ -242,10 +259,19 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             geometry->vertexDataAsPoint2D()[3].set(0, height());
         }
 
-        // update already existing child nodes
-        for (size_t eventIndex = 0; eventIndex < m_lastNumberOfEvent; eventIndex++) {
-            auto node = static_cast<QSGGeometryNode *>(root->childAtIndex(eventIndex));
-            const auto &drawEvent = m_drawEventList[eventIndex];
+        size_t count = m_drawEventList.count();
+        if (m_lastNumberOfEvent > count) {
+            // remove some nodes removed by undo
+            for (int i = m_lastNumberOfEvent; i > count; i--) {
+                root->removeChildNode(root->childAtIndex(i - 1));
+            }
+            m_lastNumberOfEvent = count;
+        }
+
+        // update already existing last child node since it is the only one who potentionally was updated
+        if (m_lastNumberOfEvent != 0) {
+            auto node = static_cast<QSGGeometryNode *>(root->childAtIndex(m_lastNumberOfEvent - 1));
+            const auto &drawEvent = m_drawEventList[m_lastNumberOfEvent - 1];
 
             auto builder = painterPathToBuilder(drawEvent.path);
             const auto lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);

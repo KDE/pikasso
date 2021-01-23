@@ -66,6 +66,7 @@ class DrawingArea : public QQuickItem
 
     Q_PROPERTY(QColor penColor READ penColor WRITE setPenColor NOTIFY penColorChanged)
     Q_PROPERTY(float penWidth READ penWidth WRITE setPenWidth NOTIFY penWidthChanged)
+    Q_PROPERTY(bool canUndo READ canUndo NOTIFY canUndoChanged)
 
 public:
     explicit DrawingArea(QQuickItem *parent = nullptr);
@@ -79,13 +80,19 @@ public:
     double penWidth() const;
     void setPenWidth(double penWidth);
 
+    bool canUndo() const;
+
     void mouseReleaseEvent(QMouseEvent* e) override;
     void mouseMoveEvent(QMouseEvent* e) override;
     void mousePressEvent(QMouseEvent* e) override;
 
+public Q_SLOTS:
+    void undo();
+
 Q_SIGNALS:
     void penColorChanged();
     void penWidthChanged();
+    void canUndoChanged();
 
 protected:
     QSGNode *updatePaintNode(QSGNode *, QQuickItem::UpdatePaintNodeData *) override;

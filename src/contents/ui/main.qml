@@ -47,6 +47,12 @@ Kirigami.ApplicationWindow {
             actions {
                 contextualActions: [
                     Kirigami.Action {
+                        text: i18n("Undo")
+                        icon.name: "edit-undo"
+                        enabled: drawingarea.canUndo
+                        onTriggered: drawingarea.undo()
+                    },
+                    Kirigami.Action {
                         text: i18n("Color")
                         icon.name: "color-management"
                         onTriggered: colorDialog.open()
