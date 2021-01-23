@@ -122,6 +122,7 @@ void DrawingArea::mouseReleaseEvent(QMouseEvent* e)
         QPoint currentPos = e->pos();
         currentDrawEvent().lineTo(currentPos);
         m_drawing = false;
+        Q_EMIT canUndoChanged();
         update();
     }
 }
@@ -176,6 +177,23 @@ rust::Box<LyonBuilder> painterPathToBuilder(const QPainterPath &path)
     }
 
     return lyonBuilder;
+}
+
+void geometryFromLyon(QSGGeometry *geometry, LyonGeometry lyonGeometry)
+{
+    QSGGeometry::Point2D *points = geometry->vertexDataAsPoint2D();
+    std::size_t i = 0;
+    for (const auto &vertice: lyonGeometry.vertices) {
+        points[i].set(vertice.x, vertice.y);
+        i++;
+    }
+
+    quint16* indices = geometry->indexDataAsUShort();
+    i = 0;
+    for (const auto indice: lyonGeometry.indices) {
+        indices[i] = indice;
+        i++;
+    }
 }
 
 QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintNodeData* updatePaintNodeData)
@@ -233,20 +251,7 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             node->setFlag(QSGNode::OwnsMaterial);
             root->appendChildNode(node);
 
-            QSGGeometry::Point2D *points = geometry->vertexDataAsPoint2D();
-            std::size_t i = 0;
-            for (const auto &vertice: lyonGeometry.vertices) {
-                points[i].set(vertice.x, vertice.y);
-                i++;
-            }
-
-            quint16* indices = geometry->indexDataAsUShort();
-            i = 0;
-            for (const auto indice: lyonGeometry.indices) {
-                indices[i] = indice;
-                i++;
-            }
-
+            geometryFromLyon(geometry, std::move(lyonGeometry));
             node->markDirty(QSGNode::DirtyGeometry);
         }
     } else {
@@ -278,19 +283,7 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             auto geometry = node->geometry();
             geometry->allocate(lyonGeometry.vertices.size(), lyonGeometry.indices.size());
 
-            QSGGeometry::Point2D *points = geometry->vertexDataAsPoint2D();
-            std::size_t i = 0;
-            for (const auto &vertice: lyonGeometry.vertices) {
-                points[i].set(vertice.x, vertice.y);
-                i++;
-            }
-
-            quint16* indices = geometry->indexDataAsUShort();
-            i = 0;
-            for (const auto indice: lyonGeometry.indices) {
-                indices[i] = indice;
-                i++;
-            }
+            geometryFromLyon(geometry, std::move(lyonGeometry));
 
             node->markDirty(QSGNode::DirtyGeometry);
         }
@@ -315,19 +308,7 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             node->setFlag(QSGNode::OwnsMaterial);
             root->appendChildNode(node);
 
-            QSGGeometry::Point2D *points = geometry->vertexDataAsPoint2D();
-            std::size_t i = 0;
-            for (const auto &vertice: lyonGeometry.vertices) {
-                points[i].set(vertice.x, vertice.y);
-                i++;
-            }
-
-            quint16* indices = geometry->indexDataAsUShort();
-            i = 0;
-            for (const auto indice: lyonGeometry.indices) {
-                indices[i] = indice;
-                i++;
-            }
+            geometryFromLyon(geometry, std::move(lyonGeometry));
 
             node->markDirty(QSGNode::DirtyGeometry);
         }
