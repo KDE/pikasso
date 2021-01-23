@@ -9,33 +9,6 @@ Kirigami.ApplicationWindow {
 
     title: i18n("KirigamiDraw")
 
-    globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("KirigamiDraw")
-        titleIcon: "applications-graphics"
-        actions: [
-            Kirigami.Action {
-                text: i18n("View")
-                icon.name: "view-list-icons"
-                Kirigami.Action {
-                    text: i18n("View Action 1")
-                    onTriggered: showPassiveNotification(i18n("View Action 1 clicked"))
-                }
-                Kirigami.Action {
-                    text: i18n("View Action 2")
-                    onTriggered: showPassiveNotification(i18n("View Action 2 clicked"))
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Action 1")
-                onTriggered: showPassiveNotification(i18n("Action 1 clicked"))
-            },
-            Kirigami.Action {
-                text: i18n("Action 2")
-                onTriggered: showPassiveNotification(i18n("Action 2 clicked"))
-            }
-        ]
-    }
-
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
     }
@@ -52,6 +25,9 @@ Kirigami.ApplicationWindow {
             DrawingArea {
                 id: drawingarea
                 anchors.fill: parent
+                antialiasing: true
+                layer.enabled: true
+                layer.samples: 4
             }
 
             ColorDialog {
