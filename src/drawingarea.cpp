@@ -111,14 +111,19 @@ void DrawingArea::mousePressEvent(QMouseEvent* event)
     setCursor(m_drawCursor);
     m_drawEventCreationTime = QTime::currentTime();
     DrawEvent drawEvent(m_penWidth, m_penColor);
-    if (m_tool == Tool::Drawing) {
+
+    switch (m_tool) {
+    case Tool::Drawing:
         drawEvent.path.moveTo(event->pos());
-    } else if (m_tool == Tool::Rectangle) {
+        break;
+    case Tool::Rectangle:
         drawEvent.path.addRect(QRectF(event->pos().x(), event->pos().y(), 1, 1));
         drawEvent.fill = true;
-    } else if (m_tool == Tool::Circle) {
+        break;
+    case Tool::Circle:
         drawEvent.path.addEllipse(QRectF(event->pos().x(), event->pos().y(), 1, 1));
         drawEvent.fill = true;
+        break;
     }
     m_drawEventList.append(drawEvent);
 
@@ -133,17 +138,23 @@ void DrawingArea::mouseMoveEvent(QMouseEvent* e)
     if ((e->buttons() & Qt::LeftButton)) {
         QPoint currentPos = e->pos();
         DrawEvent &drawEvent = currentDrawEvent();
-        if (m_tool == Tool::Drawing) {
+
+        switch(m_tool) {
+        case Tool::Drawing:
             drawEvent.lineTo(currentPos);
-        } else if (m_tool == Tool::Rectangle) {
+            break;
+        case Tool::Rectangle:
             drawEvent.path.clear();
             drawEvent.path.addRect(QRectF(currentPos.x(), currentPos.y(),
                         m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
-        } else if (m_tool == Tool::Circle) {
+            break;
+        case Tool::Circle:
             drawEvent.path.clear();
             drawEvent.path.addEllipse(QRectF(currentPos.x(), currentPos.y(),
                         m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+            break;
         }
+
         m_drawEventCreationTime = QTime::currentTime();
         update();
     }
@@ -154,17 +165,22 @@ void DrawingArea::mouseReleaseEvent(QMouseEvent* e)
     if ((e->button() == Qt::LeftButton) && m_drawing) {
         QPoint currentPos = e->pos();
         DrawEvent &drawEvent = currentDrawEvent();
-        if (m_tool == Tool::Drawing) {
+        switch(m_tool) {
+        case Tool::Drawing:
             drawEvent.lineTo(currentPos);
-        } else if (m_tool == Tool::Rectangle) {
+            break;
+        case Tool::Rectangle:
             drawEvent.path.clear();
             drawEvent.path.addRect(QRectF(currentPos.x(), currentPos.y(),
                         m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
-        } else if (m_tool == Tool::Circle) {
+            break;
+        case Tool::Circle:
             drawEvent.path.clear();
             drawEvent.path.addEllipse(QRectF(currentPos.x(), currentPos.y(),
                         m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+            break;
         }
+
         m_drawing = false;
         Q_EMIT canUndoChanged();
         update();
