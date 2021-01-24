@@ -23,7 +23,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 I18n)
 
 find_package(Corrosion)
 set_package_properties(Corrosion PROPERTIES
-    PURPOSE "Required to build the builtin adblocker"
+    PURPOSE "Required for transforming the paths to vertices and indices"
     DESCRIPTION "CMake scripts to seamlessly build and link to targets using cargo"
     URL https://github.com/AndrewGaspar/corrosion
 )
