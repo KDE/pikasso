@@ -11,7 +11,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("KDE");
     QCoreApplication::setOrganizationDomain("kde.org");
-    QCoreApplication::setApplicationName("KirigamiDraw");
+    QCoreApplication::setApplicationName("iDraw");
 
     const char *uri = "org.kde.drawingarea";
     qmlRegisterType<DrawingArea>(uri, 1, 0, "DrawingArea");
