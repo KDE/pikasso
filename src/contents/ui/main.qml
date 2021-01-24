@@ -77,9 +77,12 @@ Kirigami.ApplicationWindow {
                         onTriggered: colorDialog.open()
                     },
                     Kirigami.Action {
+                        id: widthAction
                         text: i18n("Width")
+                        enabled: drawingarea.tool == DrawingArea.Drawing
                         displayComponent: Controls.SpinBox {
                             from: 1
+                            enabled: widthAction.enabled
                             to: 100
                             onValueChanged: drawingarea.penWidth = value
                         }
