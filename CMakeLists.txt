@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(draw)
+project(pikasso)
 
 include(FeatureSummary)
 
@@ -30,7 +30,7 @@ set_package_properties(Corrosion PROPERTIES
 
 add_subdirectory(src)
 
-install(PROGRAMS org.kde.draw.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES org.kde.draw.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(PROGRAMS org.kde.pikasso.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.pikasso.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -7,7 +7,7 @@ import Qt.labs.platform 1.1
 Kirigami.ApplicationWindow {
     id: root
 
-    title: i18n("KirigamiDraw")
+    title: i18n("Draw")
 
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow {
         id: mainPageComponent
 
         Kirigami.Page {
-            title: i18n("KirigamiDraw")
+            title: i18n("Draw")
             padding: 0
 
             DrawingArea {

@@ -1,5 +1,5 @@
-# Kirigami Draw
+# Pikasso
 
-A very simple drawing application.
+A very simple drawing application using Kirigami and Rust.
 
 ![Screenshot](screenshot.png)
