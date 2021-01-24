@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=KirigamiDraw
-Comment=KirigamiDraw Kirigami Application
+Name=Pikasso
+GenericName=Drawing Program
 Version=1.0
-Exec=kirigamidraw
+Exec=pikasso
 Icon=applications-development
 Type=Application
 Terminal=false
