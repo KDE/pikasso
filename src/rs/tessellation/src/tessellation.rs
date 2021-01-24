@@ -5,11 +5,9 @@
 extern crate lyon;
 
 use lyon::path::{Path, geom::{point, vector}, builder::SvgPathBuilder, builder::WithSvg};
-use lyon::path::traits::PathBuilder;
-use lyon::math::{Point, Vector};
+use lyon::math::Point;
 use lyon::tessellation::*;
 use lyon::path::path::Builder;
-use lyon::path::builder::Flattened;
 use lyon::tessellation::geometry_builder::simple_builder;
 
 use ffi::{LyonPoint, LyonVector, LyonGeometry};
