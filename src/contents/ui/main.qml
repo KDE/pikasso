@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import org.kde.kirigami 2.4 as Kirigami
 import QtQuick.Controls 2.0 as Controls
+import QtQuick.Layouts 1.14
 import org.kde.drawingarea 1.0
 import Qt.labs.platform 1.1
 
@@ -80,11 +81,21 @@ Kirigami.ApplicationWindow {
                         id: widthAction
                         text: i18n("Width")
                         enabled: drawingarea.tool == DrawingArea.Drawing
-                        displayComponent: Controls.SpinBox {
-                            from: 1
-                            enabled: widthAction.enabled
-                            to: 100
-                            onValueChanged: drawingarea.penWidth = value
+                        property int width: 4
+                        displayComponent: RowLayout {
+                            Controls.Label {
+                                text: widthAction.text
+                            }
+                            Controls.SpinBox {
+                                from: 1
+                                enabled: widthAction.enabled
+                                to: 100
+                                value: widthAction.width
+                                onValueChanged: {
+                                    drawingarea.penWidth = value
+                                    widthAction.width = value
+                                }
+                            }
                         }
                     },
                     Kirigami.Action {
