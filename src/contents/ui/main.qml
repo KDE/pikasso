@@ -14,6 +14,7 @@ Kirigami.ApplicationWindow {
     }
 
     pageStack.initialPage: mainPageComponent
+    pageStack.interactive: false // we need to own the drag interaction
 
     Component {
         id: mainPageComponent
