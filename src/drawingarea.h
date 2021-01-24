@@ -1,23 +1,6 @@
-/*
- * <one line to give the library's name and an idea of what it does.>
- * Copyright 2020  Carl Schwan <carl@carlschwan.eu>
- *
- * This library is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) version 3, or any
- * later version accepted by the membership of KDE e.V. (or its
- * successor approved by the membership of KDE e.V.), which shall
- * act as a proxy defined in Section 6 of version 3 of the license.
- *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this library.  If not, see <https://www.gnu.org/licenses/>.
- */
+// SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
+//
+// SPDX-License-Identifier: LGPL-2.1-or-later
 
 #pragma once
 
@@ -35,12 +18,14 @@ public:
     DrawEvent()
         : penWidth(10)
         , penColor(Qt::black)
+        , fill(false)
     {
     }
 
     DrawEvent(float width, const QColor& color)
         : penWidth(width)
         , penColor(color)
+        , fill(false)
     {
     }
 
@@ -52,6 +37,7 @@ public:
     float penWidth;
     QColor penColor;
     QPainterPath path;
+    bool fill;
 };
 
 /**
@@ -67,8 +53,16 @@ class DrawingArea : public QQuickItem
     Q_PROPERTY(QColor penColor READ penColor WRITE setPenColor NOTIFY penColorChanged)
     Q_PROPERTY(float penWidth READ penWidth WRITE setPenWidth NOTIFY penWidthChanged)
     Q_PROPERTY(bool canUndo READ canUndo NOTIFY canUndoChanged)
+    Q_PROPERTY(Tool tool READ tool WRITE setTool NOTIFY toolChanged)
 
 public:
+    enum Tool {
+        Drawing,
+        Rectangle,
+        Circle,
+    };
+    Q_ENUM(Tool);
+
     explicit DrawingArea(QQuickItem *parent = nullptr);
     ~DrawingArea();
 
@@ -79,6 +73,9 @@ public:
 
     double penWidth() const;
     void setPenWidth(double penWidth);
+
+    Tool tool() const;
+    void setTool(Tool tool);
 
     bool canUndo() const;
 
@@ -93,6 +90,7 @@ Q_SIGNALS:
     void penColorChanged();
     void penWidthChanged();
     void canUndoChanged();
+    void toolChanged();
 
 protected:
     QSGNode *updatePaintNode(QSGNode *, QQuickItem::UpdatePaintNodeData *) override;
@@ -111,4 +109,5 @@ private:
     int m_eventIndex;
     bool m_drawing;
     int m_lastNumberOfEvent;
+    Tool m_tool = Tool::Drawing;
 };

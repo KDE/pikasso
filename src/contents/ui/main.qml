@@ -54,6 +54,24 @@ Kirigami.ApplicationWindow {
                         onTriggered: drawingarea.undo()
                     },
                     Kirigami.Action {
+                        icon.name: "draw-brush"
+                        checkable: true
+                        checked: drawingarea.tool == DrawingArea.Drawing
+                        onTriggered: drawingarea.tool = DrawingArea.Drawing
+                    },
+                    Kirigami.Action {
+                        icon.name: "draw-rectangle"
+                        checkable: true
+                        checked: drawingarea.tool == DrawingArea.Rectangle
+                        onTriggered: drawingarea.tool = DrawingArea.Rectangle
+                    },
+                    Kirigami.Action {
+                        icon.name: "draw-ellipse"
+                        checkable: true
+                        checked: drawingarea.tool == DrawingArea.Circle
+                        onTriggered: drawingarea.tool = DrawingArea.Circle
+                    },
+                    Kirigami.Action {
                         text: i18n("Color")
                         icon.name: "color-management"
                         onTriggered: colorDialog.open()

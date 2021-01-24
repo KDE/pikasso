@@ -71,6 +71,20 @@ void DrawingArea::setPenWidth(double penWidth)
     Q_EMIT penWidthChanged();
 }
 
+DrawingArea::Tool DrawingArea::tool() const
+{
+    return m_tool;
+}
+
+void DrawingArea::setTool(DrawingArea::Tool tool)
+{
+    if (m_tool == tool) {
+        return;
+    }
+    m_tool = tool;
+    Q_EMIT toolChanged();
+}
+
 DrawEvent &DrawingArea::currentDrawEvent()
 {
     QTime currentTime = QTime::currentTime();
@@ -97,7 +111,15 @@ void DrawingArea::mousePressEvent(QMouseEvent* event)
     setCursor(m_drawCursor);
     m_drawEventCreationTime = QTime::currentTime();
     DrawEvent drawEvent(m_penWidth, m_penColor);
-    drawEvent.path.moveTo(event->pos());
+    if (m_tool == Tool::Drawing) {
+        drawEvent.path.moveTo(event->pos());
+    } else if (m_tool == Tool::Rectangle) {
+        drawEvent.path.addRect(QRectF(event->pos().x(), event->pos().y(), 1, 1));
+        drawEvent.fill = true;
+    } else if (m_tool == Tool::Circle) {
+        drawEvent.path.addEllipse(QRectF(event->pos().x(), event->pos().y(), 1, 1));
+        drawEvent.fill = true;
+    }
     m_drawEventList.append(drawEvent);
 
     m_eventIndex = m_drawEventList.count() - 1;
@@ -110,7 +132,18 @@ void DrawingArea::mouseMoveEvent(QMouseEvent* e)
     }
     if ((e->buttons() & Qt::LeftButton)) {
         QPoint currentPos = e->pos();
-        currentDrawEvent().lineTo(currentPos);
+        DrawEvent &drawEvent = currentDrawEvent();
+        if (m_tool == Tool::Drawing) {
+            drawEvent.lineTo(currentPos);
+        } else if (m_tool == Tool::Rectangle) {
+            drawEvent.path.clear();
+            drawEvent.path.addRect(QRectF(currentPos.x(), currentPos.y(),
+                        m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+        } else if (m_tool == Tool::Circle) {
+            drawEvent.path.clear();
+            drawEvent.path.addEllipse(QRectF(currentPos.x(), currentPos.y(),
+                        m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+        }
         m_drawEventCreationTime = QTime::currentTime();
         update();
     }
@@ -120,7 +153,18 @@ void DrawingArea::mouseReleaseEvent(QMouseEvent* e)
 {
     if ((e->button() == Qt::LeftButton) && m_drawing) {
         QPoint currentPos = e->pos();
-        currentDrawEvent().lineTo(currentPos);
+        DrawEvent &drawEvent = currentDrawEvent();
+        if (m_tool == Tool::Drawing) {
+            drawEvent.lineTo(currentPos);
+        } else if (m_tool == Tool::Rectangle) {
+            drawEvent.path.clear();
+            drawEvent.path.addRect(QRectF(currentPos.x(), currentPos.y(),
+                        m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+        } else if (m_tool == Tool::Circle) {
+            drawEvent.path.clear();
+            drawEvent.path.addEllipse(QRectF(currentPos.x(), currentPos.y(),
+                        m_lastPoint.x() - currentPos.x(), m_lastPoint.y() - currentPos.y()));
+        }
         m_drawing = false;
         Q_EMIT canUndoChanged();
         update();
@@ -200,7 +244,6 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
 {
     Q_UNUSED(updatePaintNodeData)
     QSGGeometryNode *root = nullptr;
-    QSGGeometry *geometry = nullptr;
 
     if(!oldNode) {
         root = new QSGGeometryNode;
@@ -236,7 +279,12 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
         for (const auto &drawEvent : qAsConst(m_drawEventList)) {
             auto node = new QSGGeometryNode;
             auto builder = painterPathToBuilder(drawEvent.path);
-            const auto lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            LyonGeometry lyonGeometry;
+            if (!drawEvent.fill) {
+                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            } else {
+                lyonGeometry = build_fill(std::move(builder));
+            }
             QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
                     lyonGeometry.vertices.size(), lyonGeometry.indices.size());
 
@@ -264,7 +312,7 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             geometry->vertexDataAsPoint2D()[3].set(0, height());
         }
 
-        size_t count = m_drawEventList.count();
+        int count = m_drawEventList.count();
         if (m_lastNumberOfEvent > count) {
             // remove some nodes removed by undo
             for (int i = m_lastNumberOfEvent; i > count; i--) {
@@ -279,7 +327,12 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             const auto &drawEvent = m_drawEventList[m_lastNumberOfEvent - 1];
 
             auto builder = painterPathToBuilder(drawEvent.path);
-            const auto lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            LyonGeometry lyonGeometry;
+            if (!drawEvent.fill) {
+                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            } else {
+                lyonGeometry = build_fill(std::move(builder));
+            }
             auto geometry = node->geometry();
             geometry->allocate(lyonGeometry.vertices.size(), lyonGeometry.indices.size());
 
@@ -288,12 +341,17 @@ QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintN
             node->markDirty(QSGNode::DirtyGeometry);
         }
 
-        for (size_t eventIndex = m_lastNumberOfEvent; eventIndex < m_drawEventList.count(); eventIndex++) {
+        for (int eventIndex = m_lastNumberOfEvent; eventIndex < m_drawEventList.count(); eventIndex++) {
             m_lastNumberOfEvent = m_drawEventList.count();
             const auto drawEvent = m_drawEventList[eventIndex];
             auto node = new QSGGeometryNode;
             auto builder = painterPathToBuilder(drawEvent.path);
-            const auto lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            LyonGeometry lyonGeometry;
+            if (!drawEvent.fill) {
+                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+            } else {
+                lyonGeometry = build_fill(std::move(builder));
+            }
             QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
                     lyonGeometry.vertices.size(), lyonGeometry.indices.size());
 
