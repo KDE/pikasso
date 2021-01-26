@@ -2,18 +2,83 @@
 <component type="desktop-application">
   <id>org.kde.pikasso</id>
   <name>Pikasso</name>
+  <name xml:lang="ca">Pikasso</name>
+  <name xml:lang="ca-valencia">Pikasso</name>
+  <name xml:lang="es">Pikasso</name>
+  <name xml:lang="hu">Pikasso</name>
+  <name xml:lang="nl">Pikasso</name>
+  <name xml:lang="sv">Pikasso</name>
+  <name xml:lang="uk">Pikasso</name>
+  <name xml:lang="x-test">xxPikassoxx</name>
   <summary>Drawing Program</summary>
+  <summary xml:lang="ca">Programa de dibuix</summary>
+  <summary xml:lang="ca-valencia">Programa de dibuix</summary>
+  <summary xml:lang="es">Programa de dibujo</summary>
+  <summary xml:lang="hu">Rajzprogram</summary>
+  <summary xml:lang="nl">Tekenprogramma</summary>
+  <summary xml:lang="sv">Ritprogram</summary>
+  <summary xml:lang="uk">Програма для малювання</summary>
+  <summary xml:lang="x-test">xxDrawing Programxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPl-2.1-or-later</project_license>
   <developer_name>KDE</developer_name>
+  <developer_name xml:lang="ca">KDE</developer_name>
+  <developer_name xml:lang="ca-valencia">KDE</developer_name>
+  <developer_name xml:lang="es">KDE</developer_name>
+  <developer_name xml:lang="hu">KDE</developer_name>
+  <developer_name xml:lang="nl">KDE</developer_name>
+  <developer_name xml:lang="sv">KDE</developer_name>
+  <developer_name xml:lang="uk">KDE</developer_name>
+  <developer_name xml:lang="x-test">xxKDExx</developer_name>
   <description>
     <p>Pikasso is a simple drawing program for Plasma and Plasma Mobile.</p>
+    <p xml:lang="ca">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
+    <p xml:lang="ca-valencia">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
+    <p xml:lang="es">Pikasso es un sencillo programa de dibujo para Plasma y Plasma Mobile.</p>
+    <p xml:lang="hu">A Pikasso egy egyszerű rajzprogram a Plasmához és a Plasma Mobile-hoz.</p>
+    <p xml:lang="nl">Pikasso is een eenvoudig tekenprogramma voor Plasma en Plasma Mobile.</p>
+    <p xml:lang="sv">Pikasso är ett enkelt ritprogram för Plasma och Plasma Mobil.</p>
+    <p xml:lang="uk">Pikasso — проста програма для малювання для звичайної та мобільної Плазми.</p>
+    <p xml:lang="x-test">xxPikasso is a simple drawing program for Plasma and Plasma Mobile.xx</p>
     <p>Pikasso provides a few interesting features:</p>
+    <p xml:lang="ca">El Pikasso proporciona diverses funcionalitats interessants:</p>
+    <p xml:lang="ca-valencia">El Pikasso proporciona diverses funcionalitats interessants:</p>
+    <p xml:lang="es">Pikasso proporciona varias funcionalidades interesantes:</p>
+    <p xml:lang="hu">A Pikasso néhány érdekes funkciója:</p>
+    <p xml:lang="nl">Pikasso levert een paar interessante functies:</p>
+    <p xml:lang="sv">Pikasso tillhandahåller några intressanta funktioner:</p>
+    <p xml:lang="uk">У Pikasso передбачено декілька цікавих можливостей:</p>
+    <p xml:lang="x-test">xxPikasso provides a few interesting features:xx</p>
     <ul>
       <li>Free form drawing</li>
+      <li xml:lang="ca">Dibuix de forma lliure</li>
+      <li xml:lang="ca-valencia">Dibuix de forma lliure</li>
+      <li xml:lang="es">Dibujo de forma libre</li>
+      <li xml:lang="hu">Szabadkézi rajz</li>
+      <li xml:lang="nl">Tekenen van vrije vormen</li>
+      <li xml:lang="sv">Fri teckning</li>
+      <li xml:lang="uk">Малювання довільних контурів</li>
+      <li xml:lang="x-test">xxFree form drawingxx</li>
       <li>Draw rectangles and ellipses</li>
+      <li xml:lang="uk">Малювання прямокутників та еліпсів</li>
       <li>SVG export</li>
+      <li xml:lang="ca">Exporta a SVG</li>
+      <li xml:lang="ca-valencia">Exporta a SVG</li>
+      <li xml:lang="es">Exportación a SVG</li>
+      <li xml:lang="hu">Exportálás SVG-formátumba</li>
+      <li xml:lang="nl">SVG exporteren</li>
+      <li xml:lang="sv">Export till SVG</li>
+      <li xml:lang="uk">Експортування до SVG</li>
+      <li xml:lang="x-test">xxSVG exportxx</li>
       <li>Undo</li>
+      <li xml:lang="ca">Permet desfer</li>
+      <li xml:lang="ca-valencia">Permet desfer</li>
+      <li xml:lang="es">Deshacer</li>
+      <li xml:lang="hu">Visszavonás</li>
+      <li xml:lang="nl">Ongedaan maken</li>
+      <li xml:lang="sv">Ångra</li>
+      <li xml:lang="uk">Скасування дій</li>
+      <li xml:lang="x-test">xxUndoxx</li>
     </ul>
   </description>
 </component>
