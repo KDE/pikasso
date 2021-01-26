@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Pikasso
+Name[ca]=Pikasso
+Name[ca@valencia]=Pikasso
+Name[es]=Pikasso
+Name[hu]=Pikasso
+Name[nl]=Pikasso
+Name[uk]=Pikasso
+Name[x-test]=xxPikassoxx
 GenericName=Drawing Program
+GenericName[ca]=Programa de dibuix
+GenericName[ca@valencia]=Programa de dibuix
+GenericName[es]=Programa de dibujo
+GenericName[hu]=Rajzprogram
+GenericName[nl]=Tekenprogramma
+GenericName[uk]=Програма для малювання
+GenericName[x-test]=xxDrawing Programxx
 Version=1.0
 Exec=pikasso
 Icon=applications-development
