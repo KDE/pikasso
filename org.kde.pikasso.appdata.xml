@@ -67,9 +67,11 @@
       <li xml:lang="x-test">xxFree form drawingxx</li>
       <li>Draw rectangles and ellipses</li>
       <li xml:lang="ca">Dibuixa rectangles i el·lipses</li>
+      <li xml:lang="ca-valencia">Dibuixa rectangles i el·lipses</li>
       <li xml:lang="es">Dibujar rectángulos y elipses</li>
       <li xml:lang="hu">Téglalapok és ellipszisek rajzolása</li>
       <li xml:lang="nl">Rechthoeken en ellipsen tekenen</li>
+      <li xml:lang="pt">Desenhar rectângulos e elipses</li>
       <li xml:lang="sv">Rita rektanglar och ellipser</li>
       <li xml:lang="uk">Малювання прямокутників та еліпсів</li>
       <li xml:lang="x-test">xxDraw rectangles and ellipsesxx</li>
