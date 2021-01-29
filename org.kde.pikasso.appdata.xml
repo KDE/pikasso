@@ -8,6 +8,7 @@
   <name xml:lang="hu">Pikasso</name>
   <name xml:lang="nl">Pikasso</name>
   <name xml:lang="pt">Pikasso</name>
+  <name xml:lang="sk">Pikasso</name>
   <name xml:lang="sv">Pikasso</name>
   <name xml:lang="uk">Pikasso</name>
   <name xml:lang="x-test">xxPikassoxx</name>
@@ -18,6 +19,7 @@
   <summary xml:lang="hu">Rajzprogram</summary>
   <summary xml:lang="nl">Tekenprogramma</summary>
   <summary xml:lang="pt">Programa de Desenho</summary>
+  <summary xml:lang="sk">Kresliaci program</summary>
   <summary xml:lang="sv">Ritprogram</summary>
   <summary xml:lang="uk">Програма для малювання</summary>
   <summary xml:lang="x-test">xxDrawing Programxx</summary>
@@ -30,6 +32,7 @@
   <developer_name xml:lang="hu">KDE</developer_name>
   <developer_name xml:lang="nl">KDE</developer_name>
   <developer_name xml:lang="pt">KDE</developer_name>
+  <developer_name xml:lang="sk">KDE</developer_name>
   <developer_name xml:lang="sv">KDE</developer_name>
   <developer_name xml:lang="uk">KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDExx</developer_name>
@@ -92,6 +95,7 @@
       <li xml:lang="hu">Visszavonás</li>
       <li xml:lang="nl">Ongedaan maken</li>
       <li xml:lang="pt">Desfazer</li>
+      <li xml:lang="sk">Späť</li>
       <li xml:lang="sv">Ångra</li>
       <li xml:lang="uk">Скасування дій</li>
       <li xml:lang="x-test">xxUndoxx</li>
