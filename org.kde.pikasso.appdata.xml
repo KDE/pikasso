@@ -6,6 +6,7 @@
   <name xml:lang="ca-valencia">Pikasso</name>
   <name xml:lang="es">Pikasso</name>
   <name xml:lang="hu">Pikasso</name>
+  <name xml:lang="id">Pikasso</name>
   <name xml:lang="nl">Pikasso</name>
   <name xml:lang="nn">Pikasso</name>
   <name xml:lang="pt">Pikasso</name>
@@ -19,6 +20,7 @@
   <summary xml:lang="ca-valencia">Programa de dibuix</summary>
   <summary xml:lang="es">Programa de dibujo</summary>
   <summary xml:lang="hu">Rajzprogram</summary>
+  <summary xml:lang="id">Program Menggambar</summary>
   <summary xml:lang="nl">Tekenprogramma</summary>
   <summary xml:lang="nn">Teikneprogram</summary>
   <summary xml:lang="pt">Programa de Desenho</summary>
@@ -34,6 +36,7 @@
   <developer_name xml:lang="ca-valencia">KDE</developer_name>
   <developer_name xml:lang="es">KDE</developer_name>
   <developer_name xml:lang="hu">KDE</developer_name>
+  <developer_name xml:lang="id">KDE</developer_name>
   <developer_name xml:lang="nl">KDE</developer_name>
   <developer_name xml:lang="nn">KDE</developer_name>
   <developer_name xml:lang="pt">KDE</developer_name>
@@ -48,6 +51,7 @@
     <p xml:lang="ca-valencia">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
     <p xml:lang="es">Pikasso es un sencillo programa de dibujo para Plasma y Plasma Mobile.</p>
     <p xml:lang="hu">A Pikasso egy egyszerű rajzprogram a Plasmához és a Plasma Mobile-hoz.</p>
+    <p xml:lang="id">Pikasso adalah program menggambar yang sederhana untuk Plasma dan Plasma Mobile.</p>
     <p xml:lang="nl">Pikasso is een eenvoudig tekenprogramma voor Plasma en Plasma Mobile.</p>
     <p xml:lang="nn">Pikasso er eit enkelt teikneprogram for Plasma og Plasma Mobile.</p>
     <p xml:lang="pt">O Pikasso é um programa de desenho simples para o Plasma e o Plasma Móvel.</p>
@@ -60,6 +64,7 @@
     <p xml:lang="ca-valencia">El Pikasso proporciona diverses funcionalitats interessants:</p>
     <p xml:lang="es">Pikasso proporciona varias funcionalidades interesantes:</p>
     <p xml:lang="hu">A Pikasso néhány érdekes funkciója:</p>
+    <p xml:lang="id">Pikasso menyediakan beberapa fitur yang menarik:</p>
     <p xml:lang="nl">Pikasso levert een paar interessante functies:</p>
     <p xml:lang="nn">Det inneheld nokre interessante funksjonar:</p>
     <p xml:lang="pt">O Pikasso oferece algumas funcionalidades interessantes:</p>
@@ -73,6 +78,7 @@
       <li xml:lang="ca-valencia">Dibuix de forma lliure</li>
       <li xml:lang="es">Dibujo de forma libre</li>
       <li xml:lang="hu">Szabadkézi rajz</li>
+      <li xml:lang="id">Menggambar bentuk yang bebas</li>
       <li xml:lang="nl">Tekenen van vrije vormen</li>
       <li xml:lang="nn">Frihandsteikning</li>
       <li xml:lang="pt">Desenho à mão livre</li>
@@ -85,6 +91,7 @@
       <li xml:lang="ca-valencia">Dibuixa rectangles i el·lipses</li>
       <li xml:lang="es">Dibujar rectángulos y elipses</li>
       <li xml:lang="hu">Téglalapok és ellipszisek rajzolása</li>
+      <li xml:lang="id">Menggambar persegi dan lingkaran</li>
       <li xml:lang="nl">Rechthoeken en ellipsen tekenen</li>
       <li xml:lang="nn">Teikning av rektangel og ellipsar</li>
       <li xml:lang="pt">Desenhar rectângulos e elipses</li>
@@ -97,6 +104,7 @@
       <li xml:lang="ca-valencia">Exporta a SVG</li>
       <li xml:lang="es">Exportación a SVG</li>
       <li xml:lang="hu">Exportálás SVG-formátumba</li>
+      <li xml:lang="id">Ekspor SVG</li>
       <li xml:lang="nl">SVG exporteren</li>
       <li xml:lang="nn">SVG-eksport</li>
       <li xml:lang="pt">Exportação para SVG</li>
@@ -109,6 +117,7 @@
       <li xml:lang="ca-valencia">Permet desfer</li>
       <li xml:lang="es">Deshacer</li>
       <li xml:lang="hu">Visszavonás</li>
+      <li xml:lang="id">Urungkan</li>
       <li xml:lang="nl">Ongedaan maken</li>
       <li xml:lang="nn">Angra</li>
       <li xml:lang="pt">Desfazer</li>
