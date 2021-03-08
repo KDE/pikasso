@@ -4,6 +4,7 @@
   <name>Pikasso</name>
   <name xml:lang="ca">Pikasso</name>
   <name xml:lang="ca-valencia">Pikasso</name>
+  <name xml:lang="de">Pikasso</name>
   <name xml:lang="en-GB">Pikasso</name>
   <name xml:lang="es">Pikasso</name>
   <name xml:lang="fi">Pikasso</name>
@@ -22,6 +23,7 @@
   <summary>Drawing Program</summary>
   <summary xml:lang="ca">Programa de dibuix</summary>
   <summary xml:lang="ca-valencia">Programa de dibuix</summary>
+  <summary xml:lang="de">Zeichenprogramm</summary>
   <summary xml:lang="en-GB">Drawing Program</summary>
   <summary xml:lang="es">Programa de dibujo</summary>
   <summary xml:lang="fi">Piirustusohjelma</summary>
@@ -42,6 +44,7 @@
   <developer_name>KDE</developer_name>
   <developer_name xml:lang="ca">KDE</developer_name>
   <developer_name xml:lang="ca-valencia">KDE</developer_name>
+  <developer_name xml:lang="de">KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE</developer_name>
   <developer_name xml:lang="es">KDE</developer_name>
   <developer_name xml:lang="fi">KDE</developer_name>
@@ -130,6 +133,7 @@
       <li>SVG export</li>
       <li xml:lang="ca">Exporta a SVG</li>
       <li xml:lang="ca-valencia">Exporta a SVG</li>
+      <li xml:lang="de">SVG-Export</li>
       <li xml:lang="en-GB">SVG export</li>
       <li xml:lang="es">Exportación a SVG</li>
       <li xml:lang="fi">SVG-vienti</li>
@@ -147,6 +151,7 @@
       <li>Undo</li>
       <li xml:lang="ca">Permet desfer</li>
       <li xml:lang="ca-valencia">Permet desfer</li>
+      <li xml:lang="de">Rückgängig</li>
       <li xml:lang="en-GB">Undo</li>
       <li xml:lang="es">Deshacer</li>
       <li xml:lang="fi">Kumoa</li>
