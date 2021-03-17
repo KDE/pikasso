@@ -2,6 +2,7 @@
 Name=Pikasso
 Name[ca]=Pikasso
 Name[ca@valencia]=Pikasso
+Name[cs]=Pikasso
 Name[de]=Pikasso
 Name[en_GB]=Pikasso
 Name[es]=Pikasso
@@ -20,6 +21,7 @@ Name[x-test]=xxPikassoxx
 GenericName=Drawing Program
 GenericName[ca]=Programa de dibuix
 GenericName[ca@valencia]=Programa de dibuix
+GenericName[cs]=Kreslicí program
 GenericName[de]=Zeichenprogramm
 GenericName[en_GB]=Drawing Program
 GenericName[es]=Programa de dibujo
