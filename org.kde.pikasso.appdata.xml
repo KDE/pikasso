@@ -67,6 +67,7 @@
     <p>Pikasso is a simple drawing program for Plasma and Plasma Mobile.</p>
     <p xml:lang="ca">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
     <p xml:lang="ca-valencia">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
+    <p xml:lang="de">Pikasso ist ein einfaches Zeichenprogramm für Plasma und Plasma Mobile.</p>
     <p xml:lang="en-GB">Pikasso is a simple drawing program for Plasma and Plasma Mobile.</p>
     <p xml:lang="es">Pikasso es un sencillo programa de dibujo para Plasma y Plasma Mobile.</p>
     <p xml:lang="fi">Pikasso on yksinkertainen piirustusohjelma Plasmalle ja Plasma Mobilelle.</p>
@@ -84,6 +85,7 @@
     <p>Pikasso provides a few interesting features:</p>
     <p xml:lang="ca">El Pikasso proporciona diverses funcionalitats interessants:</p>
     <p xml:lang="ca-valencia">El Pikasso proporciona diverses funcionalitats interessants:</p>
+    <p xml:lang="de">Pikasso bietet einige interessante Funktionen:</p>
     <p xml:lang="en-GB">Pikasso provides a few interesting features:</p>
     <p xml:lang="es">Pikasso proporciona varias funcionalidades interesantes:</p>
     <p xml:lang="fi">Pikasson mielenkiintoisia ominaisuuksia ovat:</p>
@@ -102,6 +104,7 @@
       <li>Free form drawing</li>
       <li xml:lang="ca">Dibuix de forma lliure</li>
       <li xml:lang="ca-valencia">Dibuix de forma lliure</li>
+      <li xml:lang="de">Zeichnen von freien Formen</li>
       <li xml:lang="en-GB">Free form drawing</li>
       <li xml:lang="es">Dibujo de forma libre</li>
       <li xml:lang="fi">vapaa piirtäminen</li>
@@ -119,6 +122,7 @@
       <li>Draw rectangles and ellipses</li>
       <li xml:lang="ca">Dibuixa rectangles i el·lipses</li>
       <li xml:lang="ca-valencia">Dibuixa rectangles i el·lipses</li>
+      <li xml:lang="de">Zeichnen von Rechtecken und Ellipsen</li>
       <li xml:lang="en-GB">Draw rectangles and ellipses</li>
       <li xml:lang="es">Dibujar rectángulos y elipses</li>
       <li xml:lang="fi">nelikulmioiden ja soikioiden piirtäminen</li>
