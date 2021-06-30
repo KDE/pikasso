@@ -10,6 +10,7 @@
   <name xml:lang="es">Pikasso</name>
   <name xml:lang="fi">Pikasso</name>
   <name xml:lang="fr">Pikasso</name>
+  <name xml:lang="hi">पिकासो</name>
   <name xml:lang="hu">Pikasso</name>
   <name xml:lang="id">Pikasso</name>
   <name xml:lang="it">Pikasso</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="es">Programa de dibujo</summary>
   <summary xml:lang="fi">Piirustusohjelma</summary>
   <summary xml:lang="fr">Programme de dessin</summary>
+  <summary xml:lang="hi">चित्रकारी अनुप्रयोग</summary>
   <summary xml:lang="hu">Rajzprogram</summary>
   <summary xml:lang="id">Program Menggambar</summary>
   <summary xml:lang="it">Programma di disegno</summary>
@@ -58,6 +60,7 @@
   <developer_name xml:lang="es">KDE</developer_name>
   <developer_name xml:lang="fi">KDE</developer_name>
   <developer_name xml:lang="fr">KDE</developer_name>
+  <developer_name xml:lang="hi">केडीई</developer_name>
   <developer_name xml:lang="hu">KDE</developer_name>
   <developer_name xml:lang="id">KDE</developer_name>
   <developer_name xml:lang="it">KDE</developer_name>
@@ -81,6 +84,7 @@
     <p xml:lang="es">Pikasso es un sencillo programa de dibujo para Plasma y Plasma Mobile.</p>
     <p xml:lang="fi">Pikasso on yksinkertainen piirustusohjelma Plasmalle ja Plasma Mobilelle.</p>
     <p xml:lang="fr">Pikasso est un programme simple de dessin pour Plasma et Plasma Mobile.</p>
+    <p xml:lang="hi">पिकासो, प्लाज़्मा एवं प्लाज़्मा मोबाइल के लिए एक सरल चित्रकारी अनुप्रयोग है।</p>
     <p xml:lang="hu">A Pikasso egy egyszerű rajzprogram a Plasmához és a Plasma Mobile-hoz.</p>
     <p xml:lang="id">Pikasso adalah program menggambar yang sederhana untuk Plasma dan Plasma Mobile.</p>
     <p xml:lang="it">Pikasso è un semplice programma di disegno per Plasma e Plasma Mobile.</p>
@@ -102,6 +106,7 @@
     <p xml:lang="es">Pikasso proporciona varias funcionalidades interesantes:</p>
     <p xml:lang="fi">Pikasson mielenkiintoisia ominaisuuksia ovat:</p>
     <p xml:lang="fr">Pikasso fournit un petit nombre de fonctionnalités intéressantes :</p>
+    <p xml:lang="hi">पिकासो कुछ मनोहर विशेषाताएँ प्रदान करता है:</p>
     <p xml:lang="hu">A Pikasso néhány érdekes funkciója:</p>
     <p xml:lang="id">Pikasso menyediakan beberapa fitur yang menarik:</p>
     <p xml:lang="it">Pikasso offre alcune funzionalità interessanti:</p>
@@ -124,6 +129,7 @@
       <li xml:lang="es">Dibujo de forma libre</li>
       <li xml:lang="fi">vapaa piirtäminen</li>
       <li xml:lang="fr">Dessin à main levée</li>
+      <li xml:lang="hi">मुक्त संरूप चित्रकारी</li>
       <li xml:lang="hu">Szabadkézi rajz</li>
       <li xml:lang="id">Menggambar bentuk yang bebas</li>
       <li xml:lang="it">Disegno a forma libera</li>
@@ -145,6 +151,7 @@
       <li xml:lang="es">Dibujar rectángulos y elipses</li>
       <li xml:lang="fi">nelikulmioiden ja soikioiden piirtäminen</li>
       <li xml:lang="fr">Dessiner des rectangles et des ellipses</li>
+      <li xml:lang="hi">आयत तथा दीर्घवृत्त बनाएँ</li>
       <li xml:lang="hu">Téglalapok és ellipszisek rajzolása</li>
       <li xml:lang="id">Menggambar persegi dan lingkaran</li>
       <li xml:lang="it">Disegna rettangoli ed ellissi</li>
@@ -167,6 +174,7 @@
       <li xml:lang="es">Exportación a SVG</li>
       <li xml:lang="fi">SVG-vienti</li>
       <li xml:lang="fr">Exportation en « SVG »</li>
+      <li xml:lang="hi">एसवीजी निर्यात</li>
       <li xml:lang="hu">Exportálás SVG-formátumba</li>
       <li xml:lang="id">Ekspor SVG</li>
       <li xml:lang="it">Esportazione SVG</li>
@@ -189,6 +197,7 @@
       <li xml:lang="es">Deshacer</li>
       <li xml:lang="fi">Kumoa</li>
       <li xml:lang="fr">Annuler</li>
+      <li xml:lang="hi">पूर्ववत करें</li>
       <li xml:lang="hu">Visszavonás</li>
       <li xml:lang="id">Urungkan</li>
       <li xml:lang="it">Annulla</li>
