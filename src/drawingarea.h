@@ -98,6 +98,8 @@ protected:
 private:
     DrawEvent &currentDrawEvent();
     void ensureNewDrawEvent();
+
+    QSGNode *createRootNode();
     QColor m_penColor;
     double m_penWidth = 4;
 

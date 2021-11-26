@@ -256,136 +256,141 @@ void geometryFromLyon(QSGGeometry *geometry, LyonGeometry lyonGeometry)
     }
 }
 
+QSGNode *DrawingArea::createRootNode()
+{
+    QSGGeometryNode *root = nullptr;
+    const int vertexCount = 4;
+    const int indexCount = 2 * 3;
+    root = new QSGGeometryNode;
+    QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), vertexCount, indexCount);
+    geometry->setDrawingMode(GL_TRIANGLES);
+
+    geometry->vertexDataAsPoint2D()[0].set(0, 0);
+    geometry->vertexDataAsPoint2D()[1].set(width(), 0);
+    geometry->vertexDataAsPoint2D()[2].set(width(), height());
+    geometry->vertexDataAsPoint2D()[3].set(0, height());
+
+    quint16 *indices = geometry->indexDataAsUShort();
+    indices[0] = 0;
+    indices[1] = 1;
+    indices[2] = 2;
+    indices[3] = 0;
+    indices[4] = 3;
+    indices[5] = 2;
+
+    root->setGeometry(geometry);
+    root->setFlag(QSGNode::OwnsGeometry);
+    root->setFlag(QSGNode::OwnsMaterial);
+
+    QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
+    material->setColor(QColor("white"));
+    root->setMaterial(material);
+
+    m_lastNumberOfEvent = m_drawEventList.count();
+    // crate drawing nodes
+    for (const auto &drawEvent : qAsConst(m_drawEventList)) {
+        auto node = new QSGGeometryNode;
+        auto builder = painterPathToBuilder(drawEvent.path);
+        LyonGeometry lyonGeometry;
+        if (!drawEvent.fill) {
+            lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+        } else {
+            lyonGeometry = build_fill(std::move(builder));
+        }
+        QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
+                lyonGeometry.vertices.size(), lyonGeometry.indices.size());
+
+        geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
+        geometry->setDrawingMode(GL_TRIANGLES);
+        node->setGeometry(geometry);
+        node->setFlag(QSGNode::OwnsGeometry);
+
+        QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
+        material->setColor(drawEvent.penColor);
+        node->setMaterial(material);
+        node->setFlag(QSGNode::OwnsMaterial);
+        root->appendChildNode(node);
+
+        geometryFromLyon(geometry, std::move(lyonGeometry));
+        node->markDirty(QSGNode::DirtyGeometry);
+    }
+    return root;
+}
+
 QSGNode *DrawingArea::updatePaintNode(QSGNode *oldNode, QQuickItem::UpdatePaintNodeData* updatePaintNodeData)
 {
     Q_UNUSED(updatePaintNodeData)
-    QSGGeometryNode *root = nullptr;
 
     if(!oldNode) {
-        root = new QSGGeometryNode;
-        const int vertexCount = 4;
-        const int indexCount = 2 * 3;
-        root = new QSGGeometryNode;
-        QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), vertexCount, indexCount);
-        geometry->setDrawingMode(GL_TRIANGLES);
+        return createRootNode();
+    }
 
+    auto root = static_cast<QSGGeometryNode *>(oldNode);
+    if (m_needUpdate) {
+        auto geometry = root->geometry();
         geometry->vertexDataAsPoint2D()[0].set(0, 0);
         geometry->vertexDataAsPoint2D()[1].set(width(), 0);
         geometry->vertexDataAsPoint2D()[2].set(width(), height());
         geometry->vertexDataAsPoint2D()[3].set(0, height());
+    }
 
-        quint16 *indices = geometry->indexDataAsUShort();
-        indices[0] = 0;
-        indices[1] = 1;
-        indices[2] = 2;
-        indices[3] = 0;
-        indices[4] = 3;
-        indices[5] = 2;
+    int count = m_drawEventList.count();
+    if (m_lastNumberOfEvent > count) {
+        // remove some nodes removed by undo
+        for (int i = m_lastNumberOfEvent; i > count; i--) {
+            root->removeChildNode(root->childAtIndex(i - 1));
+        }
+        m_lastNumberOfEvent = count;
+    }
 
-        root->setGeometry(geometry);
-        root->setFlag(QSGNode::OwnsGeometry);
-        root->setFlag(QSGNode::OwnsMaterial);
+    // update already existing last child node since it is the only one who potentionally was updated
+    if (m_lastNumberOfEvent != 0) {
+        auto node = static_cast<QSGGeometryNode *>(root->childAtIndex(m_lastNumberOfEvent - 1));
+        const auto &drawEvent = m_drawEventList[m_lastNumberOfEvent - 1];
+
+        auto builder = painterPathToBuilder(drawEvent.path);
+        LyonGeometry lyonGeometry;
+        if (!drawEvent.fill) {
+            lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+        } else {
+            lyonGeometry = build_fill(std::move(builder));
+        }
+        auto geometry = node->geometry();
+        geometry->allocate(lyonGeometry.vertices.size(), lyonGeometry.indices.size());
+
+        geometryFromLyon(geometry, std::move(lyonGeometry));
+
+        node->markDirty(QSGNode::DirtyGeometry);
+    }
+
+    for (int eventIndex = m_lastNumberOfEvent; eventIndex < m_drawEventList.count(); eventIndex++) {
+        m_lastNumberOfEvent = m_drawEventList.count();
+        const auto drawEvent = m_drawEventList[eventIndex];
+        auto node = new QSGGeometryNode;
+        auto builder = painterPathToBuilder(drawEvent.path);
+        LyonGeometry lyonGeometry;
+        if (!drawEvent.fill) {
+            lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
+        } else {
+            lyonGeometry = build_fill(std::move(builder));
+        }
+        QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
+                lyonGeometry.vertices.size(), lyonGeometry.indices.size());
+
+        geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
+        geometry->setDrawingMode(GL_TRIANGLES);
+        node->setGeometry(geometry);
+        node->setFlag(QSGNode::OwnsGeometry);
 
         QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
-        material->setColor(QColor("white"));
-        root->setMaterial(material);
+        material->setColor(drawEvent.penColor);
+        node->setMaterial(material);
+        node->setFlag(QSGNode::OwnsMaterial);
+        root->appendChildNode(node);
 
-        m_lastNumberOfEvent = m_drawEventList.count();
-        // crate drawing nodes
-        for (const auto &drawEvent : qAsConst(m_drawEventList)) {
-            auto node = new QSGGeometryNode;
-            auto builder = painterPathToBuilder(drawEvent.path);
-            LyonGeometry lyonGeometry;
-            if (!drawEvent.fill) {
-                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
-            } else {
-                lyonGeometry = build_fill(std::move(builder));
-            }
-            QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
-                    lyonGeometry.vertices.size(), lyonGeometry.indices.size());
+        geometryFromLyon(geometry, std::move(lyonGeometry));
 
-            geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
-            geometry->setDrawingMode(GL_TRIANGLES);
-            node->setGeometry(geometry);
-            node->setFlag(QSGNode::OwnsGeometry);
-
-            QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
-            material->setColor(drawEvent.penColor);
-            node->setMaterial(material);
-            node->setFlag(QSGNode::OwnsMaterial);
-            root->appendChildNode(node);
-
-            geometryFromLyon(geometry, std::move(lyonGeometry));
-            node->markDirty(QSGNode::DirtyGeometry);
-        }
-    } else {
-        root = static_cast<QSGGeometryNode *>(oldNode);
-        if (m_needUpdate) {
-            auto geometry = root->geometry();
-            geometry->vertexDataAsPoint2D()[0].set(0, 0);
-            geometry->vertexDataAsPoint2D()[1].set(width(), 0);
-            geometry->vertexDataAsPoint2D()[2].set(width(), height());
-            geometry->vertexDataAsPoint2D()[3].set(0, height());
-        }
-
-        int count = m_drawEventList.count();
-        if (m_lastNumberOfEvent > count) {
-            // remove some nodes removed by undo
-            for (int i = m_lastNumberOfEvent; i > count; i--) {
-                root->removeChildNode(root->childAtIndex(i - 1));
-            }
-            m_lastNumberOfEvent = count;
-        }
-
-        // update already existing last child node since it is the only one who potentionally was updated
-        if (m_lastNumberOfEvent != 0) {
-            auto node = static_cast<QSGGeometryNode *>(root->childAtIndex(m_lastNumberOfEvent - 1));
-            const auto &drawEvent = m_drawEventList[m_lastNumberOfEvent - 1];
-
-            auto builder = painterPathToBuilder(drawEvent.path);
-            LyonGeometry lyonGeometry;
-            if (!drawEvent.fill) {
-                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
-            } else {
-                lyonGeometry = build_fill(std::move(builder));
-            }
-            auto geometry = node->geometry();
-            geometry->allocate(lyonGeometry.vertices.size(), lyonGeometry.indices.size());
-
-            geometryFromLyon(geometry, std::move(lyonGeometry));
-
-            node->markDirty(QSGNode::DirtyGeometry);
-        }
-
-        for (int eventIndex = m_lastNumberOfEvent; eventIndex < m_drawEventList.count(); eventIndex++) {
-            m_lastNumberOfEvent = m_drawEventList.count();
-            const auto drawEvent = m_drawEventList[eventIndex];
-            auto node = new QSGGeometryNode;
-            auto builder = painterPathToBuilder(drawEvent.path);
-            LyonGeometry lyonGeometry;
-            if (!drawEvent.fill) {
-                lyonGeometry = build_stroke(std::move(builder), drawEvent.penWidth);
-            } else {
-                lyonGeometry = build_fill(std::move(builder));
-            }
-            QSGGeometry *geometry = new QSGGeometry(QSGGeometry::defaultAttributes_Point2D(),
-                    lyonGeometry.vertices.size(), lyonGeometry.indices.size());
-
-            geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
-            geometry->setDrawingMode(GL_TRIANGLES);
-            node->setGeometry(geometry);
-            node->setFlag(QSGNode::OwnsGeometry);
-
-            QSGFlatColorMaterial *material = new QSGFlatColorMaterial;
-            material->setColor(drawEvent.penColor);
-            node->setMaterial(material);
-            node->setFlag(QSGNode::OwnsMaterial);
-            root->appendChildNode(node);
-
-            geometryFromLyon(geometry, std::move(lyonGeometry));
-
-            node->markDirty(QSGNode::DirtyGeometry);
-        }
+        node->markDirty(QSGNode::DirtyGeometry);
     }
 
     return root;
