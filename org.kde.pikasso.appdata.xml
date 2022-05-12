@@ -24,6 +24,7 @@
   <name xml:lang="sk">Pikasso</name>
   <name xml:lang="sl">Pikasso</name>
   <name xml:lang="sv">Pikasso</name>
+  <name xml:lang="tr">Pikasso</name>
   <name xml:lang="uk">Pikasso</name>
   <name xml:lang="x-test">xxPikassoxx</name>
   <summary>Drawing Program</summary>
@@ -49,6 +50,7 @@
   <summary xml:lang="sk">Kresliaci program</summary>
   <summary xml:lang="sl">Program za risanje</summary>
   <summary xml:lang="sv">Ritprogram</summary>
+  <summary xml:lang="tr">Çizim Programı</summary>
   <summary xml:lang="uk">Програма для малювання</summary>
   <summary xml:lang="x-test">xxDrawing Programxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
@@ -76,6 +78,7 @@
   <developer_name xml:lang="sk">KDE</developer_name>
   <developer_name xml:lang="sl">KDE</developer_name>
   <developer_name xml:lang="sv">KDE</developer_name>
+  <developer_name xml:lang="tr">KDE</developer_name>
   <developer_name xml:lang="uk">KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDExx</developer_name>
   <description>
@@ -100,6 +103,7 @@
     <p xml:lang="pt-BR">O Pikasso é um programa de desenhos simples para o Plasma e Plasma Mobile.</p>
     <p xml:lang="sl">Pikasso je enostaven program za risanje za Plasma in Plasma Mobile.</p>
     <p xml:lang="sv">Pikasso är ett enkelt ritprogram för Plasma och Plasma Mobil.</p>
+    <p xml:lang="tr">Pikasso, Plasma ve Plasma Mobile için yalın bir çizim programıdır.</p>
     <p xml:lang="uk">Pikasso — проста програма для малювання для звичайної та мобільної Плазми.</p>
     <p xml:lang="x-test">xxPikasso is a simple drawing program for Plasma and Plasma Mobile.xx</p>
     <p>Pikasso provides a few interesting features:</p>
@@ -123,6 +127,7 @@
     <p xml:lang="pt-BR">O Pikasso fornece alguns recursos interessantes:</p>
     <p xml:lang="sl">Pikasso nudi nekaj zanimivih zmožnosti:</p>
     <p xml:lang="sv">Pikasso tillhandahåller några intressanta funktioner:</p>
+    <p xml:lang="tr">Pikasso, birkaç ilginç özellik sunar:</p>
     <p xml:lang="uk">У Pikasso передбачено декілька цікавих можливостей:</p>
     <p xml:lang="x-test">xxPikasso provides a few interesting features:xx</p>
     <ul>
@@ -147,6 +152,7 @@
       <li xml:lang="pt-BR">Desenho em forma livre</li>
       <li xml:lang="sl">Prostoročno risanje</li>
       <li xml:lang="sv">Fri teckning</li>
+      <li xml:lang="tr">Serbest çizim</li>
       <li xml:lang="uk">Малювання довільних контурів</li>
       <li xml:lang="x-test">xxFree form drawingxx</li>
       <li>Draw rectangles and ellipses</li>
@@ -170,6 +176,7 @@
       <li xml:lang="pt-BR">Desenhar retângulos e elipses</li>
       <li xml:lang="sl">Risanje pravokotnikov in elips</li>
       <li xml:lang="sv">Rita rektanglar och ellipser</li>
+      <li xml:lang="tr">Dörtgenler ve elipsler çizin</li>
       <li xml:lang="uk">Малювання прямокутників та еліпсів</li>
       <li xml:lang="x-test">xxDraw rectangles and ellipsesxx</li>
       <li>SVG export</li>
@@ -194,6 +201,7 @@
       <li xml:lang="pt-BR">Exportação SVG</li>
       <li xml:lang="sl">Izvoz SVG</li>
       <li xml:lang="sv">Export till SVG</li>
+      <li xml:lang="tr">SVG dışa aktarma</li>
       <li xml:lang="uk">Експортування до SVG</li>
       <li xml:lang="x-test">xxSVG exportxx</li>
       <li>Undo</li>
@@ -219,6 +227,7 @@
       <li xml:lang="sk">Späť</li>
       <li xml:lang="sl">Razveljavi</li>
       <li xml:lang="sv">Ångra</li>
+      <li xml:lang="tr">Geri al</li>
       <li xml:lang="uk">Скасування дій</li>
       <li xml:lang="x-test">xxUndoxx</li>
     </ul>
