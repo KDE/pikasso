@@ -1,0 +1,44 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the pikasso package.
+#
+# Sameer Singh <lumarzeli30@gmail.com>, 2021.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: pikasso\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-25 02:27+0100\n"
+"PO-Revision-Date: 2021-06-29 16:53+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.04.2\n"
+
+#: contents/ui/main.qml:11 contents/ui/main.qml:24
+#, kde-format
+msgid "Draw"
+msgstr "चित्र बनाएं"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Undo"
+msgstr "पूर्ववत करें"
+
+#: contents/ui/main.qml:76
+#, kde-format
+msgid "Color"
+msgstr "रंग"
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Width"
+msgstr "चौड़ाई"
+
+#: contents/ui/main.qml:102
+#, kde-format
+msgid "Save as"
+msgstr "ऐसे सहेजें"

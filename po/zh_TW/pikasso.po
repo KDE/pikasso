@@ -1,0 +1,44 @@
+# Chinese translations for pikasso package
+# pikasso 套件的正體中文翻譯.
+# Copyright (C) 2022 This file is copyright:
+# This file is distributed under the same license as the pikasso package.
+# Automatically generated, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pikasso\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-25 02:27+0100\n"
+"PO-Revision-Date: 2021-01-25 02:27+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/ui/main.qml:11 contents/ui/main.qml:24
+#, kde-format
+msgid "Draw"
+msgstr ""
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Undo"
+msgstr ""
+
+#: contents/ui/main.qml:76
+#, kde-format
+msgid "Color"
+msgstr ""
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Width"
+msgstr ""
+
+#: contents/ui/main.qml:102
+#, kde-format
+msgid "Save as"
+msgstr ""

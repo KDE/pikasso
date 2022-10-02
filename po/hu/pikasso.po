@@ -1,0 +1,43 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the pikasso package.
+#
+# Kristóf Kiszel <kiszel.kristof@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: pikasso\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-25 02:27+0100\n"
+"PO-Revision-Date: 2021-01-25 09:52+0100\n"
+"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.03.70\n"
+
+#: contents/ui/main.qml:11 contents/ui/main.qml:24
+#, kde-format
+msgid "Draw"
+msgstr "Rajzolás"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Undo"
+msgstr "Visszavonás"
+
+#: contents/ui/main.qml:76
+#, kde-format
+msgid "Color"
+msgstr "Szín"
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Width"
+msgstr "Szélesség"
+
+#: contents/ui/main.qml:102
+#, kde-format
+msgid "Save as"
+msgstr "Mentés másként"
