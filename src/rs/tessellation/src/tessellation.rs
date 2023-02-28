@@ -44,7 +44,7 @@ impl LyonBuilder {
 
 pub fn new_builder() -> Box<LyonBuilder> {
     return Box::new(LyonBuilder{
-        builder: Path::builder().with_svg()
+        builder: WithSvg::new(Path::builder())
     })
 }
 
