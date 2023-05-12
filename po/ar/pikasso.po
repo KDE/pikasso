@@ -1,0 +1,44 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the pikasso package.
+#
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: pikasso\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-01-25 02:27+0100\n"
+"PO-Revision-Date: 2023-05-11 11:01+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: contents/ui/main.qml:11 contents/ui/main.qml:24
+#, kde-format
+msgid "Draw"
+msgstr "ارسم"
+
+#: contents/ui/main.qml:52
+#, kde-format
+msgid "Undo"
+msgstr "تراجع"
+
+#: contents/ui/main.qml:76
+#, kde-format
+msgid "Color"
+msgstr "اللون"
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Width"
+msgstr "العرض"
+
+#: contents/ui/main.qml:102
+#, kde-format
+msgid "Save as"
+msgstr "حفظ باسم"
