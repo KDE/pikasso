@@ -12,6 +12,6 @@ crate-type = ["staticlib"]
 cxx-build = "1.0.28"
 
 [dependencies]
-lyon = {version = "0.17.0" }
+lyon = {version = "1.0.1" }
 cxx = "1.0"
 
