@@ -7,6 +7,7 @@
   <name xml:lang="cs">Pikasso</name>
   <name xml:lang="de">Pikasso</name>
   <name xml:lang="en-GB">Pikasso</name>
+  <name xml:lang="eo">Pikasso</name>
   <name xml:lang="es">Pikasso</name>
   <name xml:lang="eu">Pikasso</name>
   <name xml:lang="fi">Pikasso</name>
@@ -35,6 +36,7 @@
   <summary xml:lang="cs">Kreslicí program</summary>
   <summary xml:lang="de">Zeichenprogramm</summary>
   <summary xml:lang="en-GB">Drawing Program</summary>
+  <summary xml:lang="eo">Desegna Programo</summary>
   <summary xml:lang="es">Programa de dibujo</summary>
   <summary xml:lang="eu">Marrazteko programa</summary>
   <summary xml:lang="fi">Piirustusohjelma</summary>
@@ -65,6 +67,7 @@
   <developer_name xml:lang="cs">KDE</developer_name>
   <developer_name xml:lang="de">KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE</developer_name>
+  <developer_name xml:lang="eo">KDE</developer_name>
   <developer_name xml:lang="es">KDE</developer_name>
   <developer_name xml:lang="eu">KDE</developer_name>
   <developer_name xml:lang="fi">KDE</developer_name>
@@ -119,6 +122,7 @@
     <p xml:lang="ca-valencia">Pikasso proporciona diverses característiques interessants:</p>
     <p xml:lang="de">Pikasso bietet einige interessante Funktionen:</p>
     <p xml:lang="en-GB">Pikasso provides a few interesting features:</p>
+    <p xml:lang="eo">Pikasso provizas kelkajn interesajn trajtojn:</p>
     <p xml:lang="es">Pikasso proporciona varias funcionalidades interesantes:</p>
     <p xml:lang="eu">Pikasso-k ezaugarri interesgarri batzuk eskaintzen ditu:</p>
     <p xml:lang="fi">Pikasson mielenkiintoisia ominaisuuksia ovat:</p>
@@ -146,6 +150,7 @@
       <li xml:lang="ca-valencia">Dibuix de forma lliure</li>
       <li xml:lang="de">Zeichnen von freien Formen</li>
       <li xml:lang="en-GB">Free form drawing</li>
+      <li xml:lang="eo">Liberforma desegnado</li>
       <li xml:lang="es">Dibujo de forma libre</li>
       <li xml:lang="eu">Modu librean marraztea</li>
       <li xml:lang="fi">vapaa piirtäminen</li>
@@ -172,6 +177,7 @@
       <li xml:lang="ca-valencia">Dibuixa rectangles i el·lipses</li>
       <li xml:lang="de">Zeichnen von Rechtecken und Ellipsen</li>
       <li xml:lang="en-GB">Draw rectangles and ellipses</li>
+      <li xml:lang="eo">Desegni rektangulojn kaj elipsojn</li>
       <li xml:lang="es">Dibujar rectángulos y elipses</li>
       <li xml:lang="eu">Laukizuzenak eta elipseak marraztea</li>
       <li xml:lang="fi">nelikulmioiden ja soikioiden piirtäminen</li>
@@ -199,6 +205,7 @@
       <li xml:lang="cs">Export do SVG</li>
       <li xml:lang="de">SVG-Export</li>
       <li xml:lang="en-GB">SVG export</li>
+      <li xml:lang="eo">SVG-eksporto</li>
       <li xml:lang="es">Exportación a SVG</li>
       <li xml:lang="eu">SVG esportatzea</li>
       <li xml:lang="fi">SVG-vienti</li>
@@ -226,6 +233,7 @@
       <li xml:lang="cs">Zpět</li>
       <li xml:lang="de">Rückgängig</li>
       <li xml:lang="en-GB">Undo</li>
+      <li xml:lang="eo">Malfaro</li>
       <li xml:lang="es">Deshacer</li>
       <li xml:lang="eu">Desegin</li>
       <li xml:lang="fi">Kumoa</li>
