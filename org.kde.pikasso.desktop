@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Pikasso
+Name[ar]=بيكاسو
 Name[ca]=Pikasso
 Name[ca@valencia]=Pikasso
 Name[cs]=Pikasso
@@ -28,6 +29,7 @@ Name[tr]=Pikasso
 Name[uk]=Pikasso
 Name[x-test]=xxPikassoxx
 GenericName=Drawing Program
+GenericName[ar]=برنامج رسم
 GenericName[ca]=Programa de dibuix
 GenericName[ca@valencia]=Programa de dibuix
 GenericName[cs]=Kreslicí program
