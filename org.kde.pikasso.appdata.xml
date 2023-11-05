@@ -30,7 +30,6 @@
   <name xml:lang="sv">Pikasso</name>
   <name xml:lang="tr">Pikasso</name>
   <name xml:lang="uk">Pikasso</name>
-  <name xml:lang="x-test">xxPikassoxx</name>
   <summary>Drawing Program</summary>
   <summary xml:lang="ar">برنامج رسم</summary>
   <summary xml:lang="ca">Programa de dibuix</summary>
@@ -60,7 +59,6 @@
   <summary xml:lang="sv">Ritprogram</summary>
   <summary xml:lang="tr">Çizim Programı</summary>
   <summary xml:lang="uk">Програма для малювання</summary>
-  <summary xml:lang="x-test">xxDrawing Programxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPl-2.1-or-later</project_license>
   <developer_name>KDE</developer_name>
@@ -92,7 +90,6 @@
   <developer_name xml:lang="sv">KDE</developer_name>
   <developer_name xml:lang="tr">KDE</developer_name>
   <developer_name xml:lang="uk">KDE</developer_name>
-  <developer_name xml:lang="x-test">xxKDExx</developer_name>
   <description>
     <p>Pikasso is a simple drawing program for Plasma and Plasma Mobile.</p>
     <p xml:lang="ar">بيكاسو هو برنامج رسم بسيط لبلازما للحاسب والهاتف.</p>
@@ -121,7 +118,6 @@
     <p xml:lang="sv">Pikasso är ett enkelt ritprogram för Plasma och Plasma Mobil.</p>
     <p xml:lang="tr">Pikasso, Plasma ve Plasma Cep için yalın bir çizim programıdır.</p>
     <p xml:lang="uk">Pikasso — проста програма для малювання для звичайної та мобільної Плазми.</p>
-    <p xml:lang="x-test">xxPikasso is a simple drawing program for Plasma and Plasma Mobile.xx</p>
     <p>Pikasso provides a few interesting features:</p>
     <p xml:lang="ar">بيكاسو يقدم بعض المزايا المثيرة للاهتمام:</p>
     <p xml:lang="ca">El Pikasso proporciona diverses funcionalitats interessants:</p>
@@ -149,7 +145,6 @@
     <p xml:lang="sv">Pikasso tillhandahåller några intressanta funktioner:</p>
     <p xml:lang="tr">Pikasso, birkaç ilginç özellik sunar:</p>
     <p xml:lang="uk">У Pikasso передбачено декілька цікавих можливостей:</p>
-    <p xml:lang="x-test">xxPikasso provides a few interesting features:xx</p>
     <ul>
       <li>Free form drawing</li>
       <li xml:lang="ar">رسم حر</li>
@@ -178,7 +173,6 @@
       <li xml:lang="sv">Fri teckning</li>
       <li xml:lang="tr">Serbest çizim</li>
       <li xml:lang="uk">Малювання довільних контурів</li>
-      <li xml:lang="x-test">xxFree form drawingxx</li>
       <li>Draw rectangles and ellipses</li>
       <li xml:lang="ar">رسم مربعات وأشكال بيضاوية</li>
       <li xml:lang="ca">Dibuixa rectangles i el·lipses</li>
@@ -206,7 +200,6 @@
       <li xml:lang="sv">Rita rektanglar och ellipser</li>
       <li xml:lang="tr">Dörtgenler ve elipsler çizin</li>
       <li xml:lang="uk">Малювання прямокутників та еліпсів</li>
-      <li xml:lang="x-test">xxDraw rectangles and ellipsesxx</li>
       <li>SVG export</li>
       <li xml:lang="ar">تصدير SVG</li>
       <li xml:lang="ca">Exporta a SVG</li>
@@ -235,7 +228,6 @@
       <li xml:lang="sv">Export till SVG</li>
       <li xml:lang="tr">SVG dışa aktarma</li>
       <li xml:lang="uk">Експортування до SVG</li>
-      <li xml:lang="x-test">xxSVG exportxx</li>
       <li>Undo</li>
       <li xml:lang="ar">تراجع</li>
       <li xml:lang="ca">Permet desfer</li>
@@ -265,7 +257,6 @@
       <li xml:lang="sv">Ångra</li>
       <li xml:lang="tr">Geri Al</li>
       <li xml:lang="uk">Скасування дій</li>
-      <li xml:lang="x-test">xxUndoxx</li>
     </ul>
   </description>
 </component>
