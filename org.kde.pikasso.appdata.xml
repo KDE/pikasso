@@ -25,6 +25,7 @@
   <name xml:lang="pl">Pikasso</name>
   <name xml:lang="pt">Pikasso</name>
   <name xml:lang="pt-BR">Pikasso</name>
+  <name xml:lang="ro">Pikasso</name>
   <name xml:lang="sk">Pikasso</name>
   <name xml:lang="sl">Pikasso</name>
   <name xml:lang="sv">Pikasso</name>
@@ -56,6 +57,7 @@
   <summary xml:lang="pl">Program do rysowania</summary>
   <summary xml:lang="pt">Programa de Desenho</summary>
   <summary xml:lang="pt-BR">Programa de desenho</summary>
+  <summary xml:lang="ro">Program pentru desenat</summary>
   <summary xml:lang="sk">Kresliaci program</summary>
   <summary xml:lang="sl">Program za risanje</summary>
   <summary xml:lang="sv">Ritprogram</summary>
@@ -89,6 +91,7 @@
   <developer_name xml:lang="pl">KDE</developer_name>
   <developer_name xml:lang="pt">KDE</developer_name>
   <developer_name xml:lang="pt-BR">KDE</developer_name>
+  <developer_name xml:lang="ro">KDE</developer_name>
   <developer_name xml:lang="sk">KDE</developer_name>
   <developer_name xml:lang="sl">KDE</developer_name>
   <developer_name xml:lang="sv">KDE</developer_name>
@@ -120,6 +123,7 @@
     <p xml:lang="pl">Pikasso jest prostym programem do rysowania dla Plazmy i Plazmy Mobile.</p>
     <p xml:lang="pt">O Pikasso é um programa de desenho simples para o Plasma e o Plasma Móvel.</p>
     <p xml:lang="pt-BR">O Pikasso é um programa de desenhos simples para o Plasma e Plasma Mobile.</p>
+    <p xml:lang="ro">Pikasso e un program simplu de desenat pentru Plasma și Plasma Mobile.</p>
     <p xml:lang="sl">Pikasso je enostaven program za risanje za Plasma in Plasma Mobile.</p>
     <p xml:lang="sv">Pikasso är ett enkelt ritprogram för Plasma och Plasma Mobil.</p>
     <p xml:lang="tr">Pikasso, Plasma ve Plasma Cep için yalın bir çizim programıdır.</p>
@@ -149,6 +153,7 @@
     <p xml:lang="pl">Pikasso daje kilka ciekawych możliwości:</p>
     <p xml:lang="pt">O Pikasso oferece algumas funcionalidades interessantes:</p>
     <p xml:lang="pt-BR">O Pikasso fornece alguns recursos interessantes:</p>
+    <p xml:lang="ro">Pikasso oferă câteva caracteristici interesante:</p>
     <p xml:lang="sl">Pikasso nudi nekaj zanimivih zmožnosti:</p>
     <p xml:lang="sv">Pikasso tillhandahåller några intressanta funktioner:</p>
     <p xml:lang="tr">Pikasso, birkaç ilginç özellik sunar:</p>
@@ -179,6 +184,7 @@
       <li xml:lang="pl">Odręczne rysowania</li>
       <li xml:lang="pt">Desenho à mão livre</li>
       <li xml:lang="pt-BR">Desenho em forma livre</li>
+      <li xml:lang="ro">Desen cu mâna liberă</li>
       <li xml:lang="sl">Prostoročno risanje</li>
       <li xml:lang="sv">Fri teckning</li>
       <li xml:lang="tr">Serbest çizim</li>
@@ -208,6 +214,7 @@
       <li xml:lang="pl">Rysowanie prostokątów i elips</li>
       <li xml:lang="pt">Desenhar rectângulos e elipses</li>
       <li xml:lang="pt-BR">Desenhar retângulos e elipses</li>
+      <li xml:lang="ro">Desenează dreptunghiuri și elipse</li>
       <li xml:lang="sl">Risanje pravokotnikov in elips</li>
       <li xml:lang="sv">Rita rektanglar och ellipser</li>
       <li xml:lang="tr">Dörtgenler ve elipsler çizin</li>
@@ -238,6 +245,7 @@
       <li xml:lang="pl">Eksportowanie do SVG</li>
       <li xml:lang="pt">Exportação para SVG</li>
       <li xml:lang="pt-BR">Exportação SVG</li>
+      <li xml:lang="ro">Export SVG</li>
       <li xml:lang="sl">Izvoz SVG</li>
       <li xml:lang="sv">Export till SVG</li>
       <li xml:lang="tr">SVG dışa aktarma</li>
@@ -268,6 +276,7 @@
       <li xml:lang="pl">Cofnij</li>
       <li xml:lang="pt">Desfazer</li>
       <li xml:lang="pt-BR">Desfazer</li>
+      <li xml:lang="ro">Desfacere</li>
       <li xml:lang="sk">Späť</li>
       <li xml:lang="sl">Razveljavi</li>
       <li xml:lang="sv">Ångra</li>
