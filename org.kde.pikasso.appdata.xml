@@ -104,6 +104,7 @@
     <p xml:lang="ar">بيكاسو هو برنامج رسم بسيط لبلازما للحاسب والهاتف.</p>
     <p xml:lang="ca">El Pikasso és un programa senzill de dibuix per al Plasma i el Plasma Mobile.</p>
     <p xml:lang="ca-valencia">Pikasso és un programa senzill de dibuix per a Plasma i Plasma Mobile.</p>
+    <p xml:lang="cs">Pikasso je jednoduchý kreslící program pro Plasma a Plasma Mobile.</p>
     <p xml:lang="de">Pikasso ist ein einfaches Zeichenprogramm für Plasma und Plasma Mobile.</p>
     <p xml:lang="en-GB">Pikasso is a simple drawing program for Plasma and Plasma Mobile.</p>
     <p xml:lang="eo">Pikasso estas simpla desegnadprogramo por Plasma kaj Plasma Mobile.</p>
@@ -134,6 +135,7 @@
     <p xml:lang="ar">بيكاسو يقدم بعض المزايا المثيرة للاهتمام:</p>
     <p xml:lang="ca">El Pikasso proporciona diverses funcionalitats interessants:</p>
     <p xml:lang="ca-valencia">Pikasso proporciona diverses característiques interessants:</p>
+    <p xml:lang="cs">Pikasso nabízí několik zajímavých funkcí:</p>
     <p xml:lang="de">Pikasso bietet einige interessante Funktionen:</p>
     <p xml:lang="en-GB">Pikasso provides a few interesting features:</p>
     <p xml:lang="eo">Pikasso provizas kelkajn interesajn trajtojn:</p>
@@ -165,6 +167,7 @@
       <li xml:lang="ar">رسم حر</li>
       <li xml:lang="ca">Dibuix de forma lliure</li>
       <li xml:lang="ca-valencia">Dibuix de forma lliure</li>
+      <li xml:lang="cs">Kreslení volnou rukou</li>
       <li xml:lang="de">Zeichnen von freien Formen</li>
       <li xml:lang="en-GB">Free form drawing</li>
       <li xml:lang="eo">Liberforma desegnado</li>
@@ -195,6 +198,7 @@
       <li xml:lang="ar">رسم مربعات وأشكال بيضاوية</li>
       <li xml:lang="ca">Dibuixa rectangles i el·lipses</li>
       <li xml:lang="ca-valencia">Dibuixa rectangles i el·lipses</li>
+      <li xml:lang="cs">Kreslení obdélníků a elips</li>
       <li xml:lang="de">Zeichnen von Rechtecken und Ellipsen</li>
       <li xml:lang="en-GB">Draw rectangles and ellipses</li>
       <li xml:lang="eo">Desegni rektangulojn kaj elipsojn</li>
